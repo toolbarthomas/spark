@@ -2,6 +2,7 @@ import esbuild from "esbuild";
 import { stylePlugin } from "@toolbarthomas/enlightenment/stylePlugin";
 import { resolvePlugin } from "@toolbarthomas/enlightenment/resolvePlugin";
 import { parse } from "@toolbarthomas/argumentje";
+import { glob } from "glob";
 
 const argv = parse();
 
@@ -11,11 +12,17 @@ const outExtension = {
   ".js": `${suffix}${format === "cjs" ? ".cjs" : ".js"}`,
 };
 const watch = argv.w || argv.watch || false;
+const entryPoints = [
+  "./src/index.ts",
+  ...glob.sync("./src/components/*/index.ts"),
+];
+
+console.log("aaa", entryPoints);
 
 const config = {
   bundle: false,
   bundle: true,
-  entryPoints: ["./src/index.ts"],
+  entryPoints,
   format,
   keepNames: true,
   metafile: false,
