@@ -1,0 +1,35 @@
+{
+  "name": "spark",
+  "version": "0.1.0",
+  "description": "Default preset for Enlightenment Web Components",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "tsc": "tsc --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node node/esbuild.spark.mjs -n=src/enlightenment -s -d",
+    "build": "node node/esbuild.spark.mjs -n=src/enlightenment -s && node node/esbuild.spark.mjs -n=src/enlightenment -s -m"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toolbarthomas/spark.git"
+  },
+  "keywords": [
+    "LitElement",
+    "WebComponents",
+    "Storybook"
+  ],
+  "author": "Thomas van der Velde <contact@toolbarthomas.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toolbarthomas/spark/issues"
+  },
+  "homepage": "https://github.com/toolbarthomas/spark#readme",
+  "devDependencies": {
+    "@toolbarthomas/argumentje": "^0.1.4",
+    "@toolbarthomas/enlightenment": "^0.12.0",
+    "esbuild": "^0.23.1",
+    "sass": "^1.78.0",
+    "typescript": "^5.5.4"
+  }
+}
