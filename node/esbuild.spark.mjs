@@ -12,15 +12,9 @@ const outExtension = {
   ".js": `${suffix}${format === "cjs" ? ".cjs" : ".js"}`,
 };
 const watch = argv.w || argv.watch || false;
-const entryPoints = [
-  "./src/index.ts",
-  ...glob.sync("./src/components/*/index.ts"),
-];
-
-console.log("aaa", entryPoints);
+const entryPoints = [...glob.sync("./src/spark/**/*.ts")];
 
 const config = {
-  bundle: false,
   bundle: true,
   entryPoints,
   format,
@@ -32,16 +26,22 @@ const config = {
   platform: "browser",
   plugins: [
     resolvePlugin({
-      destination: `${argv.d ? "./" : "./"}${argv.name || "Enlightenment"}${
-        outExtension[".js"]
-      }`,
-      excludeFramework: !argv.d,
+      destination: argv.cdn
+        ? argv.cdn
+        : `${argv.name || "Enlightenment"}${outExtension[".js"]}`,
+      excludeFramework: true,
       extension: outExtension[".js"],
     }),
     stylePlugin(),
   ],
 };
 
-esbuild
-  .build(config)
-  .then(() => console.log(`Library created: ${config.outdir}`));
+if (watch) {
+  esbuild.context(config).then((context) => {
+    context.watch();
+  });
+} else {
+  esbuild
+    .build(config)
+    .then(() => console.log(`Library created: ${config.outdir}`));
+}

@@ -7,10 +7,12 @@
   "scripts": {
     "tsc": "tsc --noEmit",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node node/esbuild.spark.mjs -n=src/enlightenment -s -d",
-    "build": "node node/esbuild.spark.mjs -n=src/enlightenment -s && node node/esbuild.spark.mjs -n=src/enlightenment -s -m",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "dev": "node node/esbuild.spark.mjs -n=src/enlightenment -d -w --cdn=https://cdn.jsdelivr.net/npm/@toolbarthomas/enlightenment@0.13.0/dist/Enlightenment.js",
+    "build": "node node/esbuild.spark.mjs -n=src/enlightenment --cdn=https://cdn.jsdelivr.net/npm/@toolbarthomas/enlightenment@0.13.0/dist/Enlightenment.js",
+    "postbuild": "node node/esbuild.spark.mjs -n=src/enlightenment -m --cdn=https://cdn.jsdelivr.net/npm/@toolbarthomas/enlightenment@0.13.0/dist/Enlightenment.min.js",
+    "storybook:dev": "npm run dev & storybook dev -p 6006",
+    "prestorybook:build": "npm run build",
+    "storybook:build": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -37,7 +39,7 @@
     "@storybook/html-vite": "^8.2.9",
     "@storybook/test": "^8.2.9",
     "@toolbarthomas/argumentje": "^0.1.4",
-    "@toolbarthomas/enlightenment": "^0.12.0",
+    "@toolbarthomas/enlightenment": "^0.14.1",
     "esbuild": "^0.23.1",
     "sass": "^1.78.0",
     "storybook": "^8.2.9",
