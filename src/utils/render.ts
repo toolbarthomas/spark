@@ -1,17 +1,27 @@
 export const render = <T>(path: string, tag: string, args?: T) => {
   try {
-    import(/* @vite-ignore */ `${path}?v=${Date.now()}`);
+    import(/* @vite-ignore */ `${path}?v=${Date.now()}`)
   } catch (error) {
-    error && console.error(error);
+    error && console.error(error)
   }
 
-  console.log("args", args);
+  const element = document.createElement(tag || 'div')
 
-  const element = document.createElement(tag || "div");
+  const { innerHTML, ...rest } = (args || {}) as any
 
-  Object.entries(args).forEach(([name, key]) => {
-    element[name] = key;
-  });
+  if (rest && rest instanceof Object) {
+    Object.entries(rest).forEach(([name, value]) => {
+      if (value === null || !value.length) {
+        element.removeAttribute(name)
+      } else {
+        element.setAttribute(name, value as any)
+      }
+    })
+  }
 
-  return element;
-};
+  if (innerHTML) {
+    element.innerHTML = innerHTML
+  }
+
+  return element
+}

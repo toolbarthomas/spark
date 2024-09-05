@@ -1,0 +1,113 @@
+.toolbar {
+  background-color: var(--dawn-200-a80);
+  backdrop-filter: blur(var(--space-8));
+  color: var(--dawn-900);
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition-property: box-shadow transform;
+  transition: var(--duration-default) var(--easing-default) var(--duration-fast);
+  width: 100%;
+  z-index: var(--depth-foreground);
+
+  &::before {
+    position: absolute;
+    pointer-events: none;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: var(--space-16);
+    content: ' ';
+    display: block;
+    transition: inherit;
+
+    background: linear-gradient(
+      180deg,
+      var(--dawn-700-a60) 0%,
+      var(--dawn-700-a10) 10%,
+      transparent 100%
+    );
+  }
+
+  &::after {
+    background-color: var(--dawn-100);
+    content: ' ';
+    display: block;
+    height: var(--space-1);
+    left: 0;
+    position: absolute;
+    right: 0;
+    bottom: var(--space-1);
+  }
+
+  :host([mode='dark']) & {
+    background-color: var(--dusk-800);
+
+    &::before {
+      background: linear-gradient(
+        180deg,
+        var(--dawn-700-a60) 0%,
+        var(--dawn-700-a10) 10%,
+        transparent 100%
+      );
+    }
+
+    &::after {
+      background-color: var(--dusk-900);
+    }
+  }
+
+  :host([accent]) & {
+    background-color: var(--accent-500-a95);
+
+    &::before {
+      background: linear-gradient(
+        180deg,
+        var(--accent-800-a40) 0%,
+        var(--accent-800-a20) 10%,
+        transparent 100%
+      );
+    }
+
+    &::after {
+      background-color: var(--accent-600);
+    }
+  }
+
+  :host([accent][mode='dark']) & {
+    background-color: var(--accent-800-a90);
+
+    &::before {
+      background: linear-gradient(
+        180deg,
+        var(--accent-900-a40) 0%,
+        var(--accent-900-a20) 10%,
+        transparent 100%
+      );
+    }
+
+    &::after {
+      background-color: var(--accent-800);
+    }
+  }
+
+  :host([aria-hidden='true']) &,
+  :host([aria-hidden='true'][accent][mode]) & {
+    transform: translateY(-100%);
+
+    &::before {
+      box-shadow: none;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    padding: var(--space-16) var(--space-24);
+    max-height: 100vh;
+  }
+
+  &__push {
+    transition: var(--duration-default) var(--easing-default);
+    transition-property: height;
+  }
+}
