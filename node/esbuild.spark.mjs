@@ -25,6 +25,7 @@ const config = {
   outExtension,
   platform: "browser",
   plugins: [
+    stylePlugin(),
     resolvePlugin({
       destination: argv.cdn
         ? argv.cdn
