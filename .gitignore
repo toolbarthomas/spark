@@ -1,4 +1,5 @@
 .vscode
+dist/enlightenment
 dist
 node_modules
 *storybook.log
