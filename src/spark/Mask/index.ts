@@ -21,6 +21,7 @@ export class Mask extends Enlightenment {
 
   start?: boolean = false
   end?: boolean = false
+  scrollable?: boolean = false
 
   protected accumulate() {
     const context = this.useContext() as HTMLElement
@@ -31,9 +32,10 @@ export class Mask extends Enlightenment {
     }
 
     const ratio = context.offsetWidth / context.scrollWidth
-    indicator.style.width = `${ratio ? context.offsetWidth * ratio + 'px' : 'auto'}`
+    this.resize(indicator, { width: ratio ? context.offsetWidth * ratio : 'auto' })
+    // indicator.style.width = `${ratio ?  + 'px' : 'auto'}`
 
-    console.log('ratio', ratio)
+    this.commit('scrollable', ratio === 1)
   }
 
   public connectedCallback(): void {
@@ -72,7 +74,6 @@ export class Mask extends Enlightenment {
 
   public disconnectedCallback(): void {
     super.disconnectedCallback()
-    console.log('AA', this.domReady)
   }
 
   protected handleGlobalResize(event: UIEvent) {
@@ -87,7 +88,7 @@ export class Mask extends Enlightenment {
         <div @scroll="${this.handleScroll}" class="mask__main" ref="${ref(this.context)}">
           <slot></slot>
         </div>
-        <span aria-disabled="true" aria-focusable="false" class="mask__indicator" ref="${ref(this.indicator)}"><span>
+        <span aria-disabled="true" aria-focusable="false" ?hidden="${this.scrollable}" class="mask__indicator" ref="${ref(this.indicator)}"><span>
       </div>
     </div> `
   }
