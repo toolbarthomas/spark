@@ -19,7 +19,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "predev": "rm -rf ./dist/enlightenment && cp -a ./node_modules/@toolbarthomas/enlightenment/dist ./dist/enlightenment",
     "dev": "node node/esbuild.assets.mjs -s -d & node node/esbuild.spark.mjs -n=src/enlightenment -d -w --name=../enlightenment/Enlightenment",
-    "build": "node node/esbuild.spark.mjs -n=src/enlightenment --cdn=https://cdn.jsdelivr.net/npm/@toolbarthomas/enlightenment@0.15.0/dist/Enlightenment.js",
+    "build": "node node/esbuild.assets.mjs -s -m & node node/esbuild.spark.mjs -n=src/enlightenment --cdn=https://cdn.jsdelivr.net/npm/@toolbarthomas/enlightenment@0.15.0/dist/Enlightenment.js",
     "postbuild": "node node/esbuild.spark.mjs -n=src/enlightenment -m --cdn=https://cdn.jsdelivr.net/npm/@toolbarthomas/enlightenment@0.15.0/dist/Enlightenment.min.js",
     "storybook:dev": "npm run dev & storybook dev -p 6006",
     "prestorybook:build": "npm run build",
