@@ -41,3 +41,11 @@ $webfont-serif: 'Playfair Display' !default;
   $name: $webfont-serif,
   $weight: 900
 );
+
+:host {
+  font-family: var(--webfont-sans);
+}
+
+:host[serif] {
+  font-family: var(--webfont-serif);
+}

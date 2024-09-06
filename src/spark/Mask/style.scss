@@ -1,0 +1,85 @@
+.mask {
+}
+
+.mask {
+  color: var(--grey-500);
+  border-radius: var(--space-4);
+
+  :host([mode='dark']) & {
+    color: var(--grey-100);
+  }
+
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: var(--space-16);
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  &__main {
+    flex-shrink: 1;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: calc(var(--space-0) - var(--space-32));
+    padding: calc(var(--space-16) - var(--space-4)) var(--space-16) var(--space-32);
+  }
+
+  &__indicator {
+    position: absolute;
+    bottom: 0;
+    height: var(--space-6);
+    width: 50%;
+    opacity: 0.3;
+    transition: opacity var(--easeInQuad) 60ms;
+    pointer-events: none;
+    will-change: transform;
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: ' ';
+      top: var(--space-1);
+      left: var(--space-1);
+      right: var(--space-1);
+      bottom: var(--space-1);
+      border-radius: var(--space-2);
+      background-color: var(--grey-600);
+
+      :host([accent]) & {
+        background-color: var(--accent-500-a90);
+      }
+
+      :host([mode='dark']) & {
+        background-color: var(--grey-900-a90);
+      }
+
+      :host([mode='dark'][accent]) & {
+        background-color: var(--accent-900-a40);
+      }
+    }
+
+    .mask:active &,
+    .mask:focus-within &,
+    .mask:hover & {
+      opacity: 0.8;
+    }
+
+    .mask:focus-within & {
+      transition: transform var(--easeInQuad) 60ms;
+    }
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  display: block;
+}
+
+li {
+  padding: 0;
+  margin: 0;
+  display: inline;
+}
