@@ -1,0 +1,43 @@
+$webfont-sans: 'DM Sans' !default;
+$webfont-serif: 'Playfair Display' !default;
+
+@import './mixins/font-face';
+
+:root {
+  --webfont-sans: '#{$webfont-sans}';
+  --webfont-serif: '#{$webfont-serif}';
+}
+
+// Sans
+@include fontFace(
+  $path: '@fontsource/dm-sans/files/dm-sans-latin-400-normal',
+  $name: $webfont-sans
+);
+
+@include fontFace(
+  $path: '@fontsource/dm-sans/files/dm-sans-latin-500-normal',
+  $name: $webfont-sans,
+  $weight: 500
+);
+
+@include fontFace(
+  $path: '@fontsource/dm-sans/files/dm-sans-latin-700-normal',
+  $name: $webfont-sans,
+  $weight: 700
+);
+
+// Serif
+@include fontFace(
+  $path: '@fontsource/playfair-display/files/playfair-display-latin-700-normal',
+  $name: $webfont-serif
+);
+@include fontFace(
+  $path: '@fontsource/playfair-display/files/playfair-display-latin-800-normal',
+  $name: $webfont-serif,
+  $weight: 800
+);
+@include fontFace(
+  $path: '@fontsource/playfair-display/files/playfair-display-latin-900-normal',
+  $name: $webfont-serif,
+  $weight: 900
+);

@@ -1,5 +1,8 @@
 .vscode
 dist/enlightenment
+*.woff
+*.woff2
 dist
 node_modules
 *storybook.log
+*.tgz
