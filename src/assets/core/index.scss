@@ -2,10 +2,19 @@ $webfont-sans: 'DM Sans' !default;
 $webfont-serif: 'Playfair Display' !default;
 
 @import './mixins/font-face';
+@import './mixins/responsive-font-size';
 
 :root {
   --webfont-sans: '#{$webfont-sans}';
   --webfont-serif: '#{$webfont-serif}';
+}
+
+:host {
+  font-family: var(--webfont-sans);
+}
+
+:host[serif] {
+  font-family: var(--webfont-serif);
 }
 
 // Sans
@@ -31,21 +40,25 @@ $webfont-serif: 'Playfair Display' !default;
   $path: '@fontsource/playfair-display/files/playfair-display-latin-700-normal',
   $name: $webfont-serif
 );
+
 @include fontFace(
   $path: '@fontsource/playfair-display/files/playfair-display-latin-800-normal',
   $name: $webfont-serif,
   $weight: 800
 );
+
 @include fontFace(
   $path: '@fontsource/playfair-display/files/playfair-display-latin-900-normal',
   $name: $webfont-serif,
   $weight: 900
 );
 
-:host {
-  font-family: var(--webfont-sans);
-}
-
-:host[serif] {
-  font-family: var(--webfont-serif);
+:root {
+  @include defineFontSize('base', 1rem);
+  @include defineFontSize('h1', 2.925rem);
+  @include defineFontSize('h2', 2.375rem);
+  @include defineFontSize('h3', 1.925rem);
+  @include defineFontSize('h4', 1.475rem);
+  @include defineFontSize('h5', 1.325rem);
+  @include defineFontSize('h6', 1.125rem);
 }
