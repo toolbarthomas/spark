@@ -41,23 +41,23 @@
   },
   "homepage": "https://github.com/toolbarthomas/spark#readme",
   "devDependencies": {
-    "@storybook/addon-essentials": "^8.2.9",
-    "@storybook/addon-interactions": "^8.2.9",
-    "@storybook/addon-links": "^8.2.9",
-    "@storybook/blocks": "^8.2.9",
-    "@storybook/html": "^8.2.9",
-    "@storybook/html-vite": "^8.2.9",
-    "@storybook/test": "^8.2.9",
+    "@storybook/addon-essentials": "^8.3.1",
+    "@storybook/addon-interactions": "^8.3.1",
+    "@storybook/addon-links": "^8.3.1",
+    "@storybook/blocks": "^8.3.1",
+    "@storybook/html": "^8.3.1",
+    "@storybook/html-vite": "^8.3.1",
+    "@storybook/test": "^8.3.1",
     "@toolbarthomas/argumentje": "^0.1.4",
     "@toolbarthomas/enlightenment": "^0.17.0",
     "esbuild": "^0.23.1",
     "prettier": "^3.3.3",
     "sass": "^1.78.0",
-    "storybook": "^8.2.9",
-    "typescript": "^5.5.4"
+    "storybook": "^8.3.1",
+    "typescript": "^5.6.2"
   },
   "dependencies": {
-    "@fontsource/dm-sans": "^5.0.22",
-    "@fontsource/playfair-display": "^5.0.25"
+    "@fontsource/dm-sans": "^5.1.0",
+    "@fontsource/playfair-display": "^5.1.0"
   }
 }
