@@ -21,18 +21,55 @@ export default meta
 export const Default = {
   args: {
     innerHTML: `
-      <h1>Elit anim adipisicing incididunt duis ex laboris aliqua cupidatat.</h1>
-      <p>Fugiat sint nulla tempor ut tempor exercitation minim eu et aliqua nisi. In deserunt cupidatat pariatur nulla pariatur. Sunt sit ex dolor commodo anim deserunt ea aute dolor amet minim ea id. Est duis et ut exercitation labore. Pariatur id proident voluptate officia. Eiusmod incididunt laboris laborum ea deserunt fugiat est enim.</p>
-      <h2>Elit anim adipisicing incididunt duis ex laboris aliqua cupidatat.</h2>
-      <p>Exercitation eu proident ex ut dolor voluptate.</p>
-      <h3>Et id reprehenderit mollit et proident nulla.</h3>
-      <p>Exercitation eu proident ex ut dolor voluptate.</p>
-      <h4>Et id reprehenderit mollit et proident nulla.</h4>
-      <p>Exercitation eu proident ex ut dolor voluptate.</p>
-      <h5>Et id reprehenderit mollit et proident nulla.</h5>
-      <p>Exercitation eu proident ex ut dolor voluptate.</p>
-      <h6>Et id reprehenderit mollit et proident nulla.</h6>
-      <p>Exercitation eu proident ex ut dolor voluptate.</p>
-    `
+    <div slot="main">
+      <h1>Main Heading (h1)</h1>
+        <p>This is a paragraph under h1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+        <h2>Subheading (h2)</h2>
+        <p>This is a paragraph under h2. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        <h3>Subheading (h3)</h3>
+        <p>This is a paragraph under h3. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <em>Do excepteur ullamco adipisicing sit cillum nostrud.</em>
+
+        <h4>Subheading (h4)</h4>
+        <p>This is a paragraph under h4. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+        <h5>Subheading (h5)</h5>
+        <p>This is a paragraph under h5. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <h6>Subheading (h6)</h6>
+        <p>This is a <strong>paragraph under h6</strong>. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+
+        <ul>
+          <li>Unordered list item 1</li>
+          <li>Unordered list item 2</li>
+          <li>Unordered list item 3</li>
+        </ul>
+
+        <ol>
+          <li>Ordered list item 1</li>
+          <li>Ordered list item 2</li>
+          <li>Ordered list item 3</li>
+        </ol>
+
+        <p>Here is a simple table:</p>
+
+        <p>Here is a definition list:</p>
+        <dl>
+          <dt>Term 1</dt>
+          <dd>Definition of term 1.</dd>
+          <dt>Term 2</dt>
+          <dd>Definition of term 2.</dd>
+        </dl>
+
+        <p>Here is a block of preformatted text:</p>
+
+        <details>
+          <summary>Click to expand this summary</summary>
+          <p>This is additional content shown when the summary is expanded.</p>
+        </details>
+      </div>
+  `
   }
 }

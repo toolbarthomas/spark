@@ -1,6 +1,10 @@
-export const render = <T>(path: string, tag: string, args?: T) => {
+export const render = <T>(path: string, tag: string, args?: T, deps?: string[]) => {
   try {
-    import(/* @vite-ignore */ `${path}?v=${Date.now()}`)
+    path && import(/* @vite-ignore */ `${path}?v=${Date.now()}`)
+
+    if (deps && deps.length) {
+      deps.forEach((dep) => dep && import(/* @vite-ignore */ `${dep}?v=${Date.now()}`))
+    }
   } catch (error) {
     error && console.error(error)
   }

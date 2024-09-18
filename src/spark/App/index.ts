@@ -8,23 +8,16 @@ import {
 
 import style from './style.scss'
 
-export class Formatted extends Enlightenment {
+export class App extends Enlightenment {
   static styles = [style]
-
-  enableFragments?: boolean | undefined = true
 
   protected firstUpdated(properties: PropertyValueMap<any> | Map<PropertyKey, unknown>): void {
     super.firstUpdated(properties)
-
-    this.assignFragments('main')
   }
 
   protected render() {
-    return html`
-      <div class="formatted" fragment="main"></div>
-      <slot name="main"></slot>
-    `
+    return html` <div class="app"><slot></slot></div> `
   }
 }
 
-defineCustomElement('spark-formatted', Formatted)
+defineCustomElement('spark-app', App)

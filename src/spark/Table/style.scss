@@ -1,0 +1,93 @@
+.table {
+  font-family: var(--webfont-sans);
+
+  table {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-spacing: 0;
+  }
+
+  table thead td,
+  table th {
+    font-weight: 700;
+  }
+
+  table th,
+  table td {
+    padding: var(--space-16) var(--space-12);
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  thead > tr > th,
+  thead > tr > td {
+    text-align: left;
+    background-color: var(--grey-400);
+  }
+
+  thead:first-child > tr {
+    &:first-child {
+      > td,
+      > th {
+        &:first-child {
+          border-top-left-radius: var(--space-4);
+        }
+
+        &:last-child {
+          border-top-right-radius: var(--space-4);
+        }
+      }
+    }
+
+    &:last-child {
+      > td,
+      > th {
+        &:first-child {
+          border-bottom-left-radius: var(--space-4);
+        }
+
+        &:last-child {
+          border-bottom-right-radius: var(--space-4);
+        }
+      }
+    }
+  }
+
+  tbody:first-child > tr {
+    &:first-child {
+      > th {
+        &:first-child {
+          border-top-left-radius: var(--space-4);
+        }
+
+        &:last-child {
+          border-top-right-radius: var(--space-4);
+        }
+      }
+    }
+
+    &:last-child {
+      > th {
+        &:first-child {
+          border-bottom-left-radius: var(--space-4);
+        }
+
+        &:last-child {
+          border-bottom-right-radius: var(--space-4);
+        }
+      }
+    }
+  }
+
+  tbody > tr,
+  > tr {
+    & + tr {
+      > td {
+        border-top: solid var(--grey-500) 1px;
+      }
+    }
+  }
+}

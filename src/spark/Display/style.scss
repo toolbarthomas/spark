@@ -1,0 +1,15 @@
+@import '../../assets/core/mixins/responsive-font-size';
+
+.title {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: var(--space-4);
+  font-family: var(--webfont-sans);
+  font-weight: 300;
+  color: var(--grey-900);
+  @include responsiveFontSize('base');
+
+  :host([accent]) & {
+    color: var(--accent-500);
+  }
+}

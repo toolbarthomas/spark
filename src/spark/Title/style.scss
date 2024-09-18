@@ -1,0 +1,47 @@
+@import '../../assets/core/mixins/responsive-font-size';
+
+.title {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: var(--space-4);
+  font-family: var(--webfont-sans);
+  font-weight: 300;
+  color: var(--grey-900);
+  @include responsiveFontSize('base');
+
+  :host([accent]) & {
+    color: var(--accent-500);
+  }
+
+  :host([mode='dark']) & {
+    color: var(--grey-700);
+  }
+
+  :host([accent][mode='dark']) & {
+    color: var(--accent-600);
+  }
+
+  &:is(h1) {
+    @include responsiveFontSize('h1');
+  }
+
+  &:is(h2) {
+    @include responsiveFontSize('h2');
+  }
+
+  &:is(h3) {
+    @include responsiveFontSize('h3');
+  }
+
+  &:is(h4) {
+    @include responsiveFontSize('h4');
+  }
+
+  &:is(h5) {
+    @include responsiveFontSize('h5');
+  }
+
+  &:is(h6) {
+    @include responsiveFontSize('h6');
+  }
+}

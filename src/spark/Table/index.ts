@@ -7,8 +7,9 @@ import {
 } from '@toolbarthomas/enlightenment'
 
 import style from './style.scss'
+import { PropertyValueMap } from 'lit'
 
-export class Formatted extends Enlightenment {
+export class Table extends Enlightenment {
   static styles = [style]
 
   enableFragments?: boolean | undefined = true
@@ -16,15 +17,15 @@ export class Formatted extends Enlightenment {
   protected firstUpdated(properties: PropertyValueMap<any> | Map<PropertyKey, unknown>): void {
     super.firstUpdated(properties)
 
-    this.assignFragments('main')
+    this.assignFragments('table')
   }
 
   protected render() {
     return html`
-      <div class="formatted" fragment="main"></div>
-      <slot name="main"></slot>
+      <div class="table" fragment="table"></div>
+      <slot name="table"></slot>
     `
   }
 }
 
-defineCustomElement('spark-formatted', Formatted)
+defineCustomElement('spark-table', Table)

@@ -24,6 +24,12 @@ $webfont-serif: 'Playfair Display' !default;
 );
 
 @include fontFace(
+  $path: '@fontsource/dm-sans/files/dm-sans-latin-300-normal',
+  $name: $webfont-sans,
+  $weight: 300
+);
+
+@include fontFace(
   $path: '@fontsource/dm-sans/files/dm-sans-latin-500-normal',
   $name: $webfont-sans,
   $weight: 500
@@ -55,10 +61,12 @@ $webfont-serif: 'Playfair Display' !default;
 
 :root {
   @include defineFontSize('base', 1rem);
+  @include defineFontSize('formatted', 1.275rem);
   @include defineFontSize('h1', 2.925rem);
   @include defineFontSize('h2', 2.375rem);
   @include defineFontSize('h3', 1.925rem);
   @include defineFontSize('h4', 1.475rem);
   @include defineFontSize('h5', 1.325rem);
   @include defineFontSize('h6', 1.125rem);
+  @include defineFontSize('base', 1rem);
 }
