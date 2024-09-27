@@ -1,24 +1,24 @@
 .toolbar {
-  background-color: var(--dawn-200-a80);
   backdrop-filter: blur(var(--space-8));
+  background-color: var(--dawn-200-a80);
   color: var(--dawn-900);
   left: 0;
   position: fixed;
   top: 0;
-  transition-property: box-shadow transform;
-  transition: var(--duration-default) var(--easing-default) var(--duration-fast);
+  transition: var(--timing-default) var(--easing-default) var(--timing-instant);
+  transition-property: box-shadow, transform;
   width: 100%;
   z-index: var(--depth-foreground);
 
   &::before {
-    position: absolute;
-    pointer-events: none;
-    top: 100%;
-    left: 0;
-    right: 0;
-    height: var(--space-16);
     content: ' ';
     display: block;
+    height: var(--space-16);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
     transition: inherit;
 
     background: linear-gradient(

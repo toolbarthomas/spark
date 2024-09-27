@@ -12,6 +12,7 @@ const meta = {
   render: (args: Props) =>
     render('/dist/App/index.js', 'spark-app', args, [
       '/dist/Frame/index.js',
+      '/dist/Toolbar/index.js',
       '/dist/Title/index.js'
     ]),
   argTypes: {
@@ -25,6 +26,7 @@ export default meta
 export const Default = {
   args: {
     innerHTML: `
+      <spark-toolbar autohide>AAAA</spark-toolbar>
       <spark-frame accent="grey" mode="dark">
         <div slot="header">Hello</div>
         <h1 slot="summary">
@@ -36,6 +38,7 @@ export const Default = {
           asdas
         </div>
       </spark-frame>
+      <img src="#" width="500px" height="2000px" />
 
     `
   }

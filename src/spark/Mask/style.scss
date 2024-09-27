@@ -32,7 +32,7 @@
     height: var(--space-6);
     width: 50%;
     opacity: 0.3;
-    transition: opacity var(--easeInQuad) 60ms;
+    transition: opacity var(--ease-in-quad) 60ms;
     pointer-events: none;
     will-change: transform;
 
@@ -67,7 +67,7 @@
     }
 
     .mask:focus-within & {
-      transition: transform var(--easeInQuad) 60ms;
+      transition: transform var(--ease-in-quad) 60ms;
     }
   }
 }
