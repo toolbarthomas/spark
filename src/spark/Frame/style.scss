@@ -1,5 +1,6 @@
-@import '../../assets/core/mixins/responsive-font-size';
-@import '../../assets/core/variables/selectors';
+@use '../../assets/core/mixins/responsive-font-size' as *;
+@use '../../assets/core/variables/selectors' as *;
+@use '../../assets/core/variables/breakpoints' as *;
 
 .frame {
   position: relative;

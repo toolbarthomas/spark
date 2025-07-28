@@ -1,8 +1,8 @@
 $webfont-sans: 'DM Sans' !default;
 $webfont-serif: 'Playfair Display' !default;
 
-@import './mixins/font-face';
-@import './mixins/responsive-font-size';
+@use './mixins/font-face' as *;
+@use './mixins/responsive-font-size' as *;
 
 :root {
   --webfont-sans: '#{$webfont-sans}';

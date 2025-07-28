@@ -1,4 +1,4 @@
-@import '../variables/breakpoints';
+@use '../variables/breakpoints' as *;
 
 /*
  * Defines font-size variables for multiple viewports that is based on the given
