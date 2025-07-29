@@ -1,0 +1,53 @@
+@import '../../assets/core/mixins/responsive-font-size';
+
+:host {
+  --color: red;
+}
+
+.button {
+  appearance: none;
+  background-color: var(--dawn-300);
+  border-radius: var(--space-2);
+  border: solid var(--space-1) var(--dawn-500-a50);
+  color: var(--neutral-700);
+  cursor: pointer;
+  font-family: var(--webfont-sans);
+  font-family: var(--webfont-sans);
+  font-weight: 500;
+  letter-spacing: 0.0125em;
+  min-width: var(--space-192);
+  padding: var(--space-12) var(--space-20);
+  transition-property: background-color, box-shadow;
+  transition: var(--timing-slow) var(--ease-out-quad);
+  box-shadow:
+    var(--grey-500-a10) var(--shadow-surface),
+    var(--grey-900-a5) var(--edge-surface);
+
+  @include responsiveFontSize();
+
+  &:not(:disabled):focus-visible,
+  &:not(:disabled):hover {
+    background-color: var(--neutral-300);
+
+    box-shadow:
+      var(--grey-700-a20) var(--shadow-surface),
+      var(--grey-800-a10) var(--edge-surface);
+  }
+
+  &:not(:disabled):focus-visible {
+    outline: solid var(--space-4) var(--dawn-900-a40);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  :host([mode='dark']) & {
+    background-color: var(--dusk-800);
+    color: var(--neutral-300);
+  }
+
+  :host[mode='dark'] & {
+    background-color: red;
+  }
+}
