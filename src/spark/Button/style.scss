@@ -1,4 +1,4 @@
-@import '../../assets/core/mixins/responsive-font-size';
+@use '../../assets/core/mixins/responsive-font-size' as *;
 
 :host {
   --color: red;
